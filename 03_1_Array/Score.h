@@ -1,6 +1,9 @@
 #ifndef SCORE_H
 #define SCORE_H
 #include "GameEntry.h"
+#include <iostream>
+
+using namespace std;
 
 class Score //entry의 점수
 {

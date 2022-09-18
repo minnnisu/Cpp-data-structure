@@ -1,8 +1,5 @@
 #include "Score.h"
 #include "IndexOutOfBounds.h"
-#include <iostream>
-
-using namespace std;
 
 Score::Score(int maxEnt){
     maxEntries = maxEnt;

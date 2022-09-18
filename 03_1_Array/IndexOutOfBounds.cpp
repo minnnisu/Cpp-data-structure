@@ -1,5 +1,4 @@
 #include "IndexOutOfBounds.h"
-#include <iostream>
 
 using namespace std;
 
