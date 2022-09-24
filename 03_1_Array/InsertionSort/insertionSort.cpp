@@ -5,7 +5,7 @@ using namespace std;
 void insertionSort(char A[], int n)
 {
     for (int i = 1; i < n; i++)
-    { // target선택
+    {
         char cur = A[i];
         int k = i - 1;
         while ((k >= 0) && (A[k] > cur))
