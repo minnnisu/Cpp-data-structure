@@ -7,11 +7,8 @@ string makeTicks(int n){
     if(n == 1){ //basis case
         return "-";
     }else{ //recursive case
-        string tick = makeTicks(n-1);
-        cout << tick << endl;
-        makeTicks(n-1);
-        
-        return tick + "-";
+        cout << makeTicks(n-1) << endl;
+        return makeTicks(n-1) + "-";
     }
 }
 
