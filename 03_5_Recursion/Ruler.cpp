@@ -4,9 +4,9 @@ using namespace std;
 
 //눈금을 만드는 함수
 string makeTicks(int n){
-    if(n == 1){
+    if(n == 1){ //basis case
         return "-";
-    }else{
+    }else{ //recursive case
         string tick = makeTicks(n-1);
         cout << tick << endl;
         makeTicks(n-1);
@@ -17,19 +17,19 @@ string makeTicks(int n){
 
 //원하는 크기의 하나의 눈금을 만드는 함수
 string makeOneTick(int tick){
-    if(tick == 0){
+    if(tick == 0){ //basis case
         return "-";
-    }else{
+    }else{ //recursive case
         return makeOneTick(tick-1) + "-";
     }
 }
 
 //인치를 만드는 함수
 void makeRuler(int inch, int tick){
-    if(inch == 0){
+    if(inch == 0){ //basis case
         cout << makeOneTick(tick) << " " << inch << endl;
         return;
-    }else{
+    }else{ //recursive case
         makeRuler(inch-1, tick);
         cout << makeTicks(tick) << " " << inch << endl; 
 
