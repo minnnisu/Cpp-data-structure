@@ -14,7 +14,7 @@ string makeTicks(int n){
 
 //원하는 크기의 하나의 눈금을 만드는 함수
 string makeOneTick(int tick){
-    if(tick == 0){ //basis case
+    if(tick == 1){ //basis case
         return "-";
     }else{ //recursive case
         return makeOneTick(tick-1) + "-";
