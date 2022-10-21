@@ -12,17 +12,17 @@ enum MenuType
     END
 };
 
-void enqueueData(ArrayQueue* myQueue);
-void dequeueData(ArrayQueue* myQueue);
-void showFront(ArrayQueue* myQueue);
-void showSize(ArrayQueue* myQueue);
-void empty(ArrayQueue* myQueue);
+void enqueueData(ArrayQueue& myQueue);
+void dequeueData(ArrayQueue& myQueue);
+void showFront(ArrayQueue& myQueue);
+void showSize(ArrayQueue& myQueue);
+void empty(ArrayQueue& myQueue);
 
 
 using namespace std;
 
 int main(){
-    ArrayQueue* myQueue = new ArrayQueue(5);
+    ArrayQueue myQueue(5);
 
     int choice;
     do{
@@ -67,47 +67,44 @@ int main(){
         cout << endl;
     }while (choice != MenuType::END);
 
-   
-
-    delete myQueue;
     return 0;
 
 }
 
-void enqueueData(ArrayQueue *myQueue){
+void enqueueData(ArrayQueue& myQueue){
     try{
         Elem e;
         cout << "push할 문자열" << endl;
         getline(cin,e);
-        myQueue->enqueue(e);
+        myQueue.enqueue(e);
     }catch(Exception e){
         cout << e.getErrMessage() << endl;
     }
 }
 
-void dequeueData(ArrayQueue *myQueue){
+void dequeueData(ArrayQueue& myQueue){
     try{
-        myQueue->dequeue();
+        myQueue.dequeue();
     }catch(Exception e){
         cout << e.getErrMessage() << endl;
     }
 }
 
-void showFront(ArrayQueue *myQueue){
+void showFront(ArrayQueue& myQueue){
     try{
-        cout << myQueue->front() << endl; 
+        cout << myQueue.front() << endl; 
     }catch(Exception e){
         cout << e.getErrMessage() << endl;
     }
     
 }
 
-void showSize(ArrayQueue *myQueue){
-    cout << myQueue->size() << endl;
+void showSize(ArrayQueue& myQueue){
+    cout << myQueue.size() << endl;
 }
 
-void empty(ArrayQueue *myQueue){
-    if(myQueue->empty()){
+void empty(ArrayQueue& myQueue){
+    if(myQueue.empty()){
         cout << "True" << endl;
     }else {
         cout << "False" << endl;
