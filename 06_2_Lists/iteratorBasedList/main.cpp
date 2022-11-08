@@ -10,16 +10,25 @@ int main(){
     myList.insertFront("b");
     myList.insertFront("c");
     myList.insertBack("d");
+    Iterator iter;
+    iter = myList.begin();
+    ++iter;
+    ++iter;
+    myList.insert(iter, "newNode");
 
-    cout << "------------- insert 4 element -------------" << endl;
+    cout << "------------- insert 5 element -------------" << endl;
     cout << "size: " << myList.size() << endl;
-    for(Iterator iter = myList.begin(); iter != myList.end(); ++iter){
+    for(iter = myList.begin(); iter != myList.end(); ++iter){ 
         cout << *(iter) << endl;
     }
 
-    cout << "------------- erease 4 element -------------" << endl;
     myList.eraseBack();
     myList.eraseFront();
+    iter = myList.begin();
+    ++iter;
+    myList.erase(iter);
+
+    cout << "------------- erease 3 element -------------" << endl;
     cout << "size: " << myList.size() << endl;
     for(Iterator iter = myList.begin(); iter != myList.end(); ++iter){
         cout << *(iter) << endl;
