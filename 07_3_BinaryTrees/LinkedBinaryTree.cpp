@@ -19,6 +19,18 @@ void LinkedBinaryTree::addRoot(){
     n = 1;
 }
 
+void LinkedBinaryTree::printPriority(const Position &p){
+    Node *v = p.v;
+    priority(v);
+    cout << endl;
+}
+
+void LinkedBinaryTree::priority(Node *v){
+    cout << v->elt << " ";
+    if(v->left != NULL) priority(v->left);
+    if(v->right != NULL) priority(v->right);
+}
+
 void LinkedBinaryTree::expandExternal(const Position& p){
     Node* v = p.v;
     v->left = new Node;
