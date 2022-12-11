@@ -19,16 +19,16 @@ void LinkedBinaryTree::addRoot(){
     n = 1;
 }
 
-void LinkedBinaryTree::printPriority(const Position &p){
+void LinkedBinaryTree::printPreorder(const Position &p){
     Node *v = p.v;
-    priority(v);
+    preorder(v);
     cout << endl;
 }
 
-void LinkedBinaryTree::priority(Node *v){
+void LinkedBinaryTree::preorder(Node *v){
     cout << v->elt << " ";
-    if(v->left != NULL) priority(v->left);
-    if(v->right != NULL) priority(v->right);
+    if(v->left != NULL) preorder(v->left);
+    if(v->right != NULL) preorder(v->right);
 }
 
 void LinkedBinaryTree::expandExternal(const Position& p){

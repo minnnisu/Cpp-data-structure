@@ -16,8 +16,8 @@ public:
     int size() const;
     bool empty() const;
     Position root() const;
-    void priority(Node *v);
-    void printPriority(const Position &p);
+    void preorder(Node *v);
+    void printPreorder(const Position &p);
     void addRoot();
     void expandExternal(const Position& p);
     Position removeAboveExternal(const Position& p);

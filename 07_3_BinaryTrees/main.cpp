@@ -40,7 +40,7 @@ int main(){
     p_right = p3.right();
     p_right.setItem(700);
 
-    T.printPriority(p);
-    T.printPriority(p2);
-    T.printPriority(p3);
+    T.printPreorder(p);
+    T.printPreorder(p2);
+    T.printPreorder(p3);
 }
