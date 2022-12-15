@@ -10,10 +10,8 @@ using namespace std;
 class VectorCompleteTree
 {
 public:
-    // using Position = std::vector<Student>::iterator; 
     typedef std::vector<Student>::iterator Position;
     VectorCompleteTree(): V(1) {};
-    // ~VectorCompleteTree();
     int size() const {return V.size() - 1;}
     Position left(const Position& p) {return pos(2*idx(p));}
     Position right(const Position& p) {return pos(2*idx(p) + 1);}
@@ -28,17 +26,14 @@ public:
     void swap(const Position&p , const Position& q) {Student e = *q; *q = *p; *p = e;}
 private:
     vector<Student> V;
+protected:
     Position pos(int i){
         return V.begin() + i;
     }
-
     int idx(const Position& p) const {
         return p - V.begin();
     }
-    friend class HeapPriorityQueue;
-
 };
-
 
 #endif
 

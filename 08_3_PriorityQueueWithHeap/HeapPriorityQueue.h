@@ -1,6 +1,7 @@
 #ifndef HEAP_PRIORITY_QUEUE_H
 #define HEAP_PRIORITY_QUEUE_H
 #include "VectorCompleteTree.h"
+#include "Comparator.h"
 #include "Student.h"
 #include <iostream>
 
@@ -10,12 +11,9 @@ class HeapPriorityQueue
 {
 private:
     VectorCompleteTree T;
-    // C isLess;
+    Comparator isLess;
     typedef VectorCompleteTree::Position Position;
 public:
-    bool isLess(Student& s1, Student& s2){
-        return s1.getId() < s2.getId();
-    }
     int size() const;
     bool empty() const;
     void insert(const Student& e);
