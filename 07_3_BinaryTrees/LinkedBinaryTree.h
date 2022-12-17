@@ -16,13 +16,15 @@ public:
     int size() const;
     bool empty() const;
     Position root() const;
-    void preorder(Node *v);
-    void printPreorder(const Position &p);
+    void printPreorder();
+    PositionList positions() const;
     void addRoot();
     void expandExternal(const Position& p);
+    int height(const Position& p);
+    int depth(const Position& p);
     Position removeAboveExternal(const Position& p);
 protected:
-    // void preorder(Node* v, PosisionList& pl) const;
+    void preorder(Node* v, PositionList& pl) const;
 };
 
 

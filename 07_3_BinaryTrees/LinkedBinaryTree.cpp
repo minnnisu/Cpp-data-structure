@@ -19,16 +19,27 @@ void LinkedBinaryTree::addRoot(){
     n = 1;
 }
 
-void LinkedBinaryTree::printPreorder(const Position &p){
-    Node *v = p.v;
-    preorder(v);
-    cout << endl;
+void LinkedBinaryTree::preorder(Node* v, PositionList& pl) const{
+    pl.push_back(Position(v));
+    if(v->left != NULL) preorder(v->left, pl);
+
+     if(v->right != NULL) preorder(v->right, pl);
 }
 
-void LinkedBinaryTree::preorder(Node *v){
-    cout << v->elt << " ";
-    if(v->left != NULL) preorder(v->left);
-    if(v->right != NULL) preorder(v->right);
+PositionList LinkedBinaryTree::positions() const{
+    PositionList pl;
+    preorder(_root, pl); 
+    return PositionList(pl);
+}
+
+void LinkedBinaryTree::printPreorder(){
+    PositionList pl = positions();
+    while (!pl.empty()){
+        Position p = pl.front();
+        pl.pop_front();
+        cout << p.v->elt << " ";
+    }
+    cout << endl;
 }
 
 void LinkedBinaryTree::expandExternal(const Position& p){
@@ -58,3 +69,12 @@ Position LinkedBinaryTree::removeAboveExternal(const Position& p){
     return Position(sib);
 }
 
+int LinkedBinaryTree::height(const Position& p){
+    if(p.isExternal()) return 0;
+    return max(height(p.left()) , height(p.right())) + 1;
+}
+
+int LinkedBinaryTree::depth(const Position& p){
+    if(p.isRoot()) return 0;
+    return 1 + depth(p.parent());
+}

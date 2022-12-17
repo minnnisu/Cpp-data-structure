@@ -9,6 +9,7 @@ int main(){
     Position p;
     Position p2;
     Position p3;
+    Position p4;
     Position p_left;
     Position p_right;
 
@@ -40,7 +41,15 @@ int main(){
     p_right = p3.right();
     p_right.setItem(700);
 
-    T.printPreorder(p);
-    T.printPreorder(p2);
-    T.printPreorder(p3);
+    p4 = p2.right();
+    T.expandExternal(p4);
+    p_left = p4.left();
+    p_left.setItem(800);
+    p_right = p4.right();
+    p_right.setItem(900);
+
+    T.printPreorder();
+
+    cout << "Height of root: " << T.height(p) << endl;
+    cout << "Depth of p4: " << T.depth(p4) << endl;
 }

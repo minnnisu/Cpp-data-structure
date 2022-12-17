@@ -1,6 +1,7 @@
 #ifndef POISITON_H
 #define POISITON_H
 #include <iostream>
+#include <list>
 #include "Node.h"
 
 using namespace std;
@@ -23,5 +24,5 @@ public:
     void setItem(Elem e);
 };
 
-// typedef std:list<Position> PostionList;
+typedef std::list<Position> PositionList;
 #endif
