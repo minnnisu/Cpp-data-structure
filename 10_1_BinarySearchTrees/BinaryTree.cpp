@@ -10,7 +10,7 @@ bool BinaryTree::empty() const{
     return size() == 0;
 }
 
-BinaryTree::Position BinaryTree::root() const{
+Position BinaryTree::root() const{
     return Position(_root);
 }
 
@@ -19,7 +19,7 @@ void BinaryTree::addRoot(){
     n = 1;
 }
 
-// void BinaryTree::preorder(Node* v, PositionList& pl) const{
+// void BinaryTree::preorder(Node* v, PositionList& pl) const{ 
 //     pl.push_back(Position(v));
 //     if(v->left != NULL) preorder(v->left, pl);
 
@@ -51,7 +51,7 @@ void BinaryTree::expandExternal(const Position& p){
     n += 2;
 }
 
-BinaryTree::Position BinaryTree::removeAboveExternal(const Position& p){
+Position BinaryTree::removeAboveExternal(const Position& p){
     Node* w = p.v; Node* v = w->par;
     Node* sib = (w == v->left ? v->right : v->left);
     if(v == _root){
@@ -77,35 +77,4 @@ int BinaryTree::height(const Position& p){
 int BinaryTree::depth(const Position& p){
     if(p.isRoot()) return 0;
     return 1 + depth(p.parent());
-}
-
-
-Entry& BinaryTree::Position::operator*() const{
-    return v->elt;
-}
-bool BinaryTree::Position::operator==(const Position& p) const{
-    return v == p.v;
-}
-BinaryTree::Position BinaryTree::Position::left() const {
-    return Position(v->left);
-}
-BinaryTree::Position BinaryTree::Position::right() const {
-    return Position(v->right);
-}
-BinaryTree::Position BinaryTree::Position::parent() const {
-    return Position(v->par);
-}
-bool BinaryTree::Position::isRoot() const {
-    return v->par == NULL;
-}
-
-bool BinaryTree::Position::isExternal() const {
-    return v-> left == NULL && v->right == NULL;
-}
-
-bool BinaryTree::Position::isInternal() const{
-    return !isExternal();
-}
-void BinaryTree::Position::setItem(Entry e) {
-    v->elt = e;
 }

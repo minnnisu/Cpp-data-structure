@@ -1,9 +1,8 @@
 #ifndef LINKED_BINARY_TREE_H
 #define LINKED_BINARY_TREE_H
 #include <iostream>
-#include <list>
 #include "Node.h"
-#include "Entry.h"
+#include "Position.h"
 
 using namespace std;
 
@@ -13,7 +12,6 @@ private:
     Node* _root;
     int n;
 public:
-    class Position;
     BinaryTree();
     int size() const;
     bool empty() const;
@@ -27,26 +25,6 @@ public:
     Position removeAboveExternal(const Position& p);
 protected:
     // void preorder(Node* v, PositionList& pl) const;
-public:
-    class Position
-    {
-    private:
-        Node* v;
-        friend class BinaryTree;
-    public:
-        Position(Node* _v = NULL):v(_v){}
-        ~Position(){}
-        Entry& operator*() const;
-        bool operator==(const Position& v) const;
-        Position left() const;
-        Position right() const;
-        Position parent() const;
-        bool isRoot() const;
-        bool isInternal() const;
-        bool isExternal() const;
-        void setItem(Entry e);
-        typedef std::list<Position> PositionList;
-    };
 };
 
 

@@ -1,9 +1,10 @@
 #ifndef NODE_H
 #define NODE_H
-#include "Entry.h"
 #include <iostream>
+#include "Entry.h"
 
 using namespace std;
+typedef int Elem;
 
 class Node
 {

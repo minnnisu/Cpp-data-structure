@@ -1,7 +1,7 @@
 #include "SearchTree.h"
 
 typedef SearchTree::Iterator Iterator;
-typedef BinaryTree::Position TPos;
+typedef SearchTree::TPos TPos;
 
 Iterator& Iterator::operator++() {
     TPos w = v.right();

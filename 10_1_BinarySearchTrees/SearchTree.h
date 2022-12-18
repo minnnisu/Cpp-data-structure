@@ -1,6 +1,7 @@
 #ifndef SEARCH_TREE_H
 #define SEARCH_TREE_H
 #include "BinaryTree.h"
+#include "Position.h"
 #include "Entry.h"
 #include <iostream>
 
@@ -9,6 +10,7 @@ using namespace std;
 class SearchTree
 {
 public:
+    typedef Position TPos;
     class Iterator;
     SearchTree();
     int size() const;
@@ -20,7 +22,6 @@ public:
     Iterator begin();
     Iterator end();
 protected:
-    typedef BinaryTree::Position TPos;
     TPos root() const;
     TPos finder(const int k, const TPos& v);
     TPos inserter(const int k, const string& x);
