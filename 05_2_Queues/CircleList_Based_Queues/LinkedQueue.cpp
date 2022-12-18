@@ -28,5 +28,3 @@ void LinkedQueue::dequeue(){
     q.remove();
     n--;
 }
-
-
