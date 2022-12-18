@@ -23,5 +23,5 @@ int main(){
 
     hm.erase("Park");
 
-    if(hm.find("Park") == hm.end()) cout << "Park Is Deleted" << endl;
+    if(hm.find("Park") == hm.end()) cout << "Not Found" << endl;
 }
