@@ -47,59 +47,14 @@ void DLinkedList::addBack(const Elem& e){
     add(tailer, e);
 }
 
-void DLinkedList::addByIndex(const Elem& e, int i){
-    int idx = 0;
-    if (i == 0){
-        addFront(e);
-        cout << "Node 추가 성공!" << endl;
-        return;
-    }
-
-    DNode *targetNode = header->next;
-    while (targetNode != tailer){
-        if (idx == i){
-            add(targetNode, e);
-            cout << "Node 추가 성공!" << endl;
-            return;
-        }
-        targetNode = targetNode->next;
-        idx++;
-    }
-
-    cout << "접근 가능한 인덱스가 아닙니다." << endl;
-}
-
-void DLinkedList::removeByIndex(int i){
-    int idx = 0;
-    if (i == 0){
-        removeFront();
-        return;
-    }
-
-    DNode *targetNode = header->next;
-    while (targetNode != tailer){
-        if (idx == i){
-            remove(targetNode);
-            return;
-        }
-        targetNode = targetNode->next;
-        idx++;
-    }
-    cout << "접근 가능한 인덱스가 아닙니다." << endl;
-}
-
-
 void DLinkedList::remove(DNode *v){
-    if(empty()){
-        cout << "노드가 비어있습니다." << endl;
-    }else{
+    if(!empty()){
         DNode *prevNode = v->prev;
         DNode *nextNode = v->next;
         prevNode->next = nextNode;
         nextNode->prev = prevNode;
         
         delete v;
-        cout << "Node 삭제 성공!" << endl;
     }
 }
 

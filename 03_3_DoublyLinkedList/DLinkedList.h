@@ -20,10 +20,8 @@ public:
     const Elem& back() const;
     void addFront(const Elem& e);
     void addBack(const Elem& e);
-    void addByIndex(const Elem& e, int i);
     void removeFront();
     void removeBack();
-    void removeByIndex(int i);
     void showAll();
 protected:
     void add(DNode *v, const Elem& e);
